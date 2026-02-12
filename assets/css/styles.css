@@ -91,11 +91,11 @@ img{max-width:100%; display:block}
 }
 
 .hero{position:relative; padding:72px 0 44px}
-.page-hero{padding:56px 0 22px}
+.page-hero{padding:26px 0 22px}
 
 .hero-grid{
   display:grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: .85fr 1.15fr;
   gap:26px;
   align-items:stretch;
 }
@@ -144,7 +144,7 @@ img{max-width:100%; display:block}
   font-size:.92rem;
 }
 
-.hero-visual{display:flex}
+ 
 .visual-card{
   width:100%;
   padding:18px;
@@ -172,7 +172,7 @@ img{max-width:100%; display:block}
   transform: rotate(45deg);
 }
 
-.section{padding:56px 0}
+.section{padding:26px 0}
 .section-alt{
   background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
   border-top:1px solid var(--line);
@@ -519,3 +519,5 @@ body{
 section{
   overflow: hidden;
 }
+
+ 
