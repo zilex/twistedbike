@@ -141,52 +141,6 @@
     lb.addEventListener("touchend", onTouchEnd, { passive: true });
   }
 
-  // =========================
-  // AUTO GALLERY LOADER (NO DUPLICATION)
-  // BFCache-safe: runs on DOMContentLoaded and pageshow
-  // =========================
-  const gallerySpecs = [
-    { id: "auto-gallery", folder: "assets/img/gallery/", max: 50, alt: "TwistedBike galerija" },
-    { id: "auto-gallery-partner", folder: "assets/img/partner/", max: 10, alt: "TwistedBike partner" },
-    { id: "auto-gallery-event", folder: "assets/img/event/", max: 10, alt: "TwistedBike eventi" }
-  ];
-
-  function fillGallery(spec) {
-    const host = document.getElementById(spec.id);
-    if (!host) return;
-
-    // Prevent double-fill (pageshow may fire + user refresh/back)
-  if (host.querySelector("img")) return;
-host.innerHTML = "";
-    for (let i = 1; i <= spec.max; i++) {
-      const img = new Image();
-      img.src = spec.folder + i + ".jpg";
-      img.loading = "lazy";
-      img.alt = `${spec.alt} ${i}`;
-
-      img.onload = function () {
-        const figure = document.createElement("figure");
-        figure.className = "g-item";
-        figure.appendChild(img);
-        host.appendChild(figure);
-      };
-
-      // Optional: ignore missing files silently
-      img.onerror = function () {
-        // do nothing
-      };
-    }
-  }
-
-  function initAutoGalleries() {
-    gallerySpecs.forEach(fillGallery);
-  }
-
-  document.addEventListener("DOMContentLoaded", initAutoGalleries);
-
-  // BFCache fix: when user navigates back/forward, DOMContentLoaded may not fire again
-  window.addEventListener("pageshow", () => {
-    initAutoGalleries();
-    refreshItems(); // lightbox re-sync (in case DOM was restored)
-  });
+ 
+ 
 })();
