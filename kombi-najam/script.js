@@ -84,6 +84,8 @@ async function checkGoogleCalendarAvailability(startIso, endIso) {
 }
 
 /* ================================================= */
+startInput.addEventListener('click', () => startPicker.open());
+endInput.addEventListener('click', () => endPicker.open());
 
 const today = new Date();
 today.setHours(0, 0, 0, 0);
@@ -91,14 +93,14 @@ const todayIso = formatDateIso(today);
 
 const startPicker = flatpickr(startInput, {
   dateFormat: "d.m.Y",
-  allowInput: true,
+  allowInput: false,
   disableMobile: true,
   minDate: "today"
 });
 
 const endPicker = flatpickr(endInput, {
   dateFormat: "d.m.Y",
-  allowInput: true,
+  allowInput: false,
   disableMobile: true,
   minDate: "today"
 });

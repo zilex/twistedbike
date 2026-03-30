@@ -52,7 +52,7 @@
               <label>
                 Datum od
                 <div class="date-input-wrap">
-                  <input type="text" id="startDate"   required inputmode="numeric">
+                  <input type="text" id="startDate" required readonly onkeydown="return false;">
                   <button type="button" class="calendar-btn" id="startDateBtn" aria-label="Odaberi datum od">📅</button>
                 </div>
               </label>
@@ -60,7 +60,7 @@
               <label>
                 Datum do
                 <div class="date-input-wrap">
-                  <input type="text" id="endDate"   required inputmode="numeric">
+                  <input type="text" id="endDate"  required readonly onkeydown="return false;">
                   <button type="button" class="calendar-btn" id="endDateBtn" aria-label="Odaberi datum do">📅</button>
                 </div>
               </label>
