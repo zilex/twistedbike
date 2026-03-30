@@ -146,14 +146,14 @@ form.addEventListener('submit', async (e) => {
     const isAvailable = await checkGoogleCalendarAvailability(start, end);
 
     if (isAvailable) {
-      setResult('result-success', 'Termin je dostupan. Nazovi 092 343 1924 i rezerviraj.');
+      setResult('result-success', 'Termin je dostupan. Nazovite 092 343 1924 i rezervirajte.');
     } else {
       setResult('result-danger', 'Nažalost termin je zauzet.');
     }
 
   } catch (err) {
     console.error(err);
-    setResult('result-danger', 'Greška pri provjeri. Nazovi 092 343 1924 za provjeru.');
+    setResult('result-danger', 'Greška pri provjeri. Nazovite 092 343 1924 za provjeru.');
   }
 });
 
