@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Najam kombija 8+1 | Provjera dostupnosti</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark">8+1</div>
+        <div>
+          <div class="brand-title">NAJAM KOMBIJA</div>
+          <div class="brand-subtitle">Za svaku vašu prigodu</div>
+        </div>
+      </div>
+      <a class="btn btn-outline" href="#provjera">Provjeri dostupnost</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">TREBAŠ KOMBI?</div>
+          <h1>Najam kombija 8+1<br>bez vozača</h1>
+          <p class="lead">
+            Pouzdan i uredan putnički kombi sa 8 sjedala + vozač za izlete, svadbe, obiteljska putovanja
+            i druge prigode. Brzo provjeri termin online.
+          </p>
+
+          <div class="hero-points">
+            <span>8+1 sjedala</span> 
+            <span>Beli Manastir / Baranja</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#provjera">Provjeri termin</a>
+            <a class="btn btn-secondary" href="#uvjeti">Uvjeti najma</a>
+          </div>
+        </div>
+
+        <div class="hero-card" id="provjera">
+          <div class="card-badge">ONLINE PROVJERA</div>
+          <h2>Provjera dostupnosti</h2>
+          <p>Datume možeš upisati ručno u formatu <strong>datum.mjesec.godina</strong> ili odabrati klikom na ikonu kalendara.</p>
+
+          <form id="availabilityForm" class="availability-form">
+            <div class="manual-grid">
+              <label>
+                Datum od
+                <div class="date-input-wrap">
+                  <input type="text" id="startDate" placeholder="dd.mm.gggg" required inputmode="numeric">
+                  <button type="button" class="calendar-btn" id="startDateBtn" aria-label="Odaberi datum od">📅</button>
+                </div>
+              </label>
+
+              <label>
+                Datum do
+                <div class="date-input-wrap">
+                  <input type="text" id="endDate" placeholder="dd.mm.gggg" required inputmode="numeric">
+                  <button type="button" class="calendar-btn" id="endDateBtn" aria-label="Odaberi datum do">📅</button>
+                </div>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Provjeri dostupnost</button>
+          </form>
+
+          <div id="result" class="result result-neutral">
+            Odaberi raspon datuma za provjeru.
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">GALERIJA</div>
+          <h2>Primjeri fotografija</h2>
+          <p class="section-copy">Trenutno su ubačene demo fotografije koje kasnije možemo zamijeniti stvarnim slikama tvog kombija.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1011/900/620" alt="Demo fotografija 1" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1015/900/620" alt="Demo fotografija 2" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1016/900/620" alt="Demo fotografija 3" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1020/900/620" alt="Demo fotografija 4" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1024/900/620" alt="Demo fotografija 5" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1025/900/620" alt="Demo fotografija 6" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1035/900/620" alt="Demo fotografija 7" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1039/900/620" alt="Demo fotografija 8" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1040/900/620" alt="Demo fotografija 9" loading="lazy"></figure>
+          <figure class="gallery-item"><img class="gallery-image" src="https://picsum.photos/id/1043/900/620" alt="Demo fotografija 10" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">CJENIK</div>
+          <h2>Jednostavno i jasno</h2>
+        </div>
+
+        <div class="pricing-box">
+          <div class="price-main">
+            <div class="price-amount">70 €</div>
+            <div class="price-sub">po danu</div>
+          </div>
+          <div class="price-info">
+            <div class="price-pill">do 300 km po danu, 0.25€ po km preko limita.</div> 
+            <div class="price-pill">polog 500€</div>
+            <div class="price-pill">pun spremnik dobiješ - pun spremnik vraćaš</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">ZAŠTO OVAJ KOMBI</div>
+          <h2>Jednostavno, jasno i bez komplikacija</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Za putnike</h3>
+            <p>Idealan za obitelji, ekipe, svadbe, izlete i vikend putovanja.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Brza provjera termina</h3>
+            <p>U par sekundi provjeri je li željeni raspon slobodan.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Nadzor i sigurnost</h3>
+            <p>Kombi je opremljen GPS sustavom za nadzor i provjeru stila vožnje.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="terms" id="uvjeti">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">UVJETI NAJMA</div>
+          <h2>Važne informacije prije rezervacije</h2>
+        </div>
+
+        <div class="terms-panel">
+          <div class="terms-list">
+            <div class="term-item"><h3>Dob vozača</h3><p>Vozač mora imati najmanje 30 godina.</p></div>
+            <div class="term-item"><h3>Polog</h3><p>Polog iznosi 500 € i <b>vraća se</b> nakon povrata i kontrole kombija.</p></div>
+            <div class="term-item"><h3>Gorivo</h3><p>Kombi se preuzima s punim spremnikom goriva i takav se vraća.</p></div>
+            <div class="term-item"><h3>Cijena i kilometri</h3><p>Cijena najma je 70 € po danu, uključeno je 300 km dnevno. Dodatni kilometri 0.25 € / km.</p></div>
+            <div class="term-item"><h3>Zapisnik i pregled</h3><p>Prije vožnje radimo zapisnik i kontrolu stanja kombija, a nakon povrata ponovnu kontrolu.</p></div>
+            <div class="term-item"><h3>GPS nadzor</h3><p>Kombi je opremljen GPS sustavom za nadzor i provjeru stila vožnje.</p></div>
+            <div class="term-item"><h3>Zabrana pušenja</h3><p>Pušenje u kombiju je strogo zabranjeno.</p></div>
+            <div class="term-item"><h3>Najam bez vozača</h3><p>Vozilo se iznajmljuje isključivo bez vozača.</p></div>
+            <div class="term-item"><h3>Dokumenti</h3><p>Za najam su potrebni važeća osobna iskaznica i vozačka dozvola B kategorije.</p></div>
+            <div class="term-item"><h3>Odgovornost</h3><p>Korisnik odgovara za prometne kazne, štetu nastalu u najmu i nepravilno korištenje vozila.</p></div>
+          </div>
+
+          <div class="terms-note">
+            <strong>Napomena:</strong> Rezervacija termina radi se isključivo telefonskim putem.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-strip">
+      <div class="container contact-strip-inner">
+        <div>
+          <div class="eyebrow">REZERVACIJE</div>
+          <h2>092 343 1924</h2>
+        </div>
+        <div class="contact-side">
+          <span>Beli Manastir / Baranja</span>
+          <span>kombi.twisterbike.hr</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>
+        <div class="footer-title">NAJAM KOMBIJA 8+1</div>
+        <div class="footer-subtitle">Za svaku vašu prigodu</div>
+      </div>
+      <div class="footer-contact">
+        <span>092 343 1924</span>
+        <span>Beli Manastir / Baranja</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Zatvori galeriju">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Prethodna fotografija">‹</button>
+    <img class="lightbox-image" id="lightboxImage" src="" alt="Pregled fotografije">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Sljedeća fotografija">›</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="script.js"></script>
+</body>
+</html>
