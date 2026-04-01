@@ -104,22 +104,38 @@ body {
 .gallery-item:hover img { transform: scale(1.03); }
 
 .pricing-box {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
-  justify-content: center;
   align-items: stretch;
 }
 
 .price-main {
-  flex: 1 1 0;        /* KLJUÄŒNO */
-  max-width: 300px;   /* da ne pobjegne */
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  min-height: 170px;
   text-align: center;
   background: #111;
   border-radius: 12px;
   padding: 20px;
+  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .price-amount { font-size: 64px; font-weight: 900; color: var(--accent); line-height: 1; }
-.price-sub { margin-top: 8px; color: #fff; font-weight: 700; }
+.price-sub {
+  margin-top: 8px;
+  color: #fff;
+  font-weight: 700;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .price-info { display: flex; gap: 12px; flex-wrap: wrap; }
 .price-pill {
   border: 1px solid var(--line); background: rgba(255,255,255,.04);
@@ -194,7 +210,8 @@ body {
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 920px) {
-  .hero-grid, .feature-grid, .terms-list, .pricing-box { grid-template-columns: 1fr; }
+  .hero-grid, .feature-grid, .terms-list { grid-template-columns: 1fr; }
+  .pricing-box { grid-template-columns: 1fr; }
   .contact-strip-inner, .footer-row { flex-direction: column; align-items: flex-start; }
   .contact-side, .footer-contact { text-align: left; }
 }
@@ -202,12 +219,14 @@ body {
   .nav { min-height: 70px; }
   .brand-mark { width: 48px; height: 48px; border-radius: 14px; }
   .hero { padding-top: 40px; }
-  .hero-card, .pricing-box, .terms-panel { padding: 22px; }
+  .hero-card, .terms-panel { padding: 22px; }
+  .pricing-box { grid-template-columns: 1fr; }
+  .price-main { min-height: 140px; }
   .hero-copy h1 { font-size: 38px; }
   .lead { font-size: 16px; }
   .manual-grid { grid-template-columns: 1fr; }
   .gallery-grid {
-    display: grid; grid-auto-flow: column; grid-auto-columns: 84%; overflow-x: auto;
+    display: grid; grid-auto-flow: column; grid-auto-columns: 74%; overflow-x: auto;
     overscroll-behavior-x: contain; scroll-snap-type: x mandatory; gap: 14px; padding-bottom: 6px; scrollbar-width: thin;
   }
   .gallery-item { scroll-snap-align: start; min-width: 0; }
