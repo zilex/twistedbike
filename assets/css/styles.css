@@ -594,5 +594,9 @@ section{
 @media (max-width: 900px){
   .quick-grid, .steps{ grid-template-columns: 1fr; }
 }
+.footer-row { display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+.footer-title { font-weight: 800; letter-spacing: 1px; }
+.footer-subtitle, .footer-contact { color: var(--muted); }
+.footer-contact { display: flex; flex-direction: column; text-align: right; gap: 6px; }
 
  
