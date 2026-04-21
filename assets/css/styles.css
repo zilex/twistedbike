@@ -123,7 +123,7 @@ section { overflow: hidden; }
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 28px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero h1 {
@@ -172,18 +172,17 @@ section { overflow: hidden; }
 .cta-center {
   justify-content: flex-start;
 }
-
-.btn {
+ .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 215px;
-  padding: 13px 18px;
-  border-radius: 14px;
-  font-weight: 800;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 700;
   letter-spacing: 0.01em;
   border: 1px solid transparent;
-  transition: transform 0.12s ease, filter 0.12s ease, background 0.12s ease;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .btn:hover {
@@ -191,18 +190,27 @@ section { overflow: hidden; }
 }
 
 .btn-primary {
-  color: #111;
-  background: linear-gradient(135deg, var(--brand-red), var(--brand-yellow));
-  box-shadow: 0 14px 38px rgba(246,1,1,0.18);
+  color: #fff;
+  background: #f60101;
+  border-color: rgba(255,255,255,0.08);
+  box-shadow: 0 8px 22px rgba(246, 1, 1, 0.18);
+}
+
+.btn-primary:hover {
+  background: #d90000;
+  box-shadow: 0 10px 26px rgba(246, 1, 1, 0.22);
 }
 
 .btn-secondary {
-  background: rgba(255,255,255,0.06);
+  color: #e5e7eb;
+  background: rgba(255,255,255,0.04);
   border-color: rgba(255,255,255,0.12);
+  box-shadow: none;
 }
 
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.18);
 }
 
 .visual-card {
@@ -475,7 +483,7 @@ section { overflow: hidden; }
 }
 
 .site-footer {
-  padding: 28px 0 16px;
+  padding: 20px 0 12px; /* još manje */
   background: rgba(0,0,0,0.25);
   border-top: 1px solid var(--line);
 }
@@ -483,26 +491,32 @@ section { overflow: hidden; }
 .footer-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 18px;
+  align-items: flex-start;
+  gap: 6px;
 }
 
 .footer-title {
-  font-weight: 900;
-  letter-spacing: 0.06em;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
-.footer-subtitle,
-.footer-contact {
+.footer-subtitle {
+  font-size: 0.8rem;
   color: var(--muted);
+  margin-top: 2px;
 }
 
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px; /* još zbijenije */
   text-align: right;
+  font-size: 0.85rem;
+  color: rgba(229,231,235,0.75);
 }
+
 
 .lightbox {
   position: fixed;
@@ -657,4 +671,37 @@ section { overflow: hidden; }
     width: 46px;
     height: 46px;
   }
+}
+
+.unmute-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.unmute-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+ 
+
+.visual-video {
+  position: relative;
+}
+
+.pulse {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }

@@ -144,3 +144,24 @@
  
  
 })();
+
+const video = document.querySelector('.hero-video');
+const btn = document.querySelector('.unmute-btn');
+
+if (video && btn) {
+  btn.addEventListener('click', () => {
+    video.muted = !video.muted;
+
+    if (video.muted) {
+      btn.textContent = '🔊 Uključi zvuk';
+      btn.setAttribute('aria-label', 'Uključi zvuk');
+    } else {
+      btn.textContent = '🔇 Isključi zvuk';
+      btn.setAttribute('aria-label', 'Isključi zvuk');
+    }
+  });
+}
+
+setTimeout(() => {
+  btn.classList.add('pulse');
+}, 2000);
