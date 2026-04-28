@@ -705,3 +705,25 @@ section { overflow: hidden; }
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
+.revenue-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.revenue-card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.revenue-highlight {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.revenue-note {
+  margin-top: 15px;
+  font-size: 14px;
+}
