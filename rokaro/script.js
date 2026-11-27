@@ -84,7 +84,6 @@
   const videoHero = document.querySelector('.hero-cinema');
   const videoControls = document.getElementById('video-controls');
   const videoPause = document.getElementById('video-pause');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let manuallyPaused = false;
   video.controls = false;
   video.playsInline = true;
@@ -101,15 +100,14 @@
   videoControls.hidden = false;
   syncPlayButton();
   const startVideo = () => {
-    if (reducedMotion || manuallyPaused || document.hidden) return;
+    if (manuallyPaused || document.hidden) return;
     video.muted = true;
     const attempt = video.play();
     if (attempt && typeof attempt.catch === 'function') attempt.catch(syncPlayButton);
   };
   video.addEventListener('loadeddata', () => {
     videoHero.classList.add('video-ready');
-    if (reducedMotion) video.pause();
-    else startVideo();
+    startVideo();
     syncPlayButton();
   });
   video.addEventListener('playing', () => videoHero.classList.add('video-ready'));
