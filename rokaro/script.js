@@ -142,11 +142,12 @@
   const updateSticky = () => {
     const isMobile = window.innerWidth <= 760;
     const heroPassed = document.querySelector('.hero').getBoundingClientRect().bottom < 130;
-    const galleryReached = document.getElementById('galerija').getBoundingClientRect().top < window.innerHeight * 0.9;
+    const galleryBox = document.getElementById('galerija').getBoundingClientRect();
+    const galleryVisible = galleryBox.top < window.innerHeight * 0.9 && galleryBox.bottom > 110;
     const box = contact.getBoundingClientRect();
     const contactVisible = box.top < window.innerHeight && box.bottom > 100;
-    // Hide above the hero and when the photo gallery starts: no fixed button covering the pictures.
-    sticky.classList.toggle('visible', isMobile && heroPassed && !galleryReached && !contactVisible);
+    // Keep the CTA visible throughout the page, but hide it while the gallery or contact area is on screen.
+    sticky.classList.toggle('visible', isMobile && heroPassed && !galleryVisible && !contactVisible);
   };
   window.addEventListener('scroll', updateSticky, { passive: true });
   window.addEventListener('resize', updateSticky);
