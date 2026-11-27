@@ -85,6 +85,7 @@
   const videoControls = document.getElementById('video-controls');
   const videoPause = document.getElementById('video-pause');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let manuallyPaused = false;
   video.controls = false;
   video.playsInline = true;
   video.muted = true;
@@ -100,7 +101,8 @@
   videoControls.hidden = false;
   syncPlayButton();
   const startVideo = () => {
-    if (reducedMotion) return;
+    if (reducedMotion || manuallyPaused || document.hidden) return;
+    video.muted = true;
     const attempt = video.play();
     if (attempt && typeof attempt.catch === 'function') attempt.catch(syncPlayButton);
   };
@@ -111,6 +113,7 @@
     syncPlayButton();
   });
   video.addEventListener('playing', () => videoHero.classList.add('video-ready'));
+  video.addEventListener('canplay', startVideo);
   video.addEventListener('play', syncPlayButton);
   video.addEventListener('pause', syncPlayButton);
   video.addEventListener('error', () => {
@@ -120,11 +123,19 @@
   });
   videoPause.addEventListener('click', () => {
     if (video.paused) {
+      manuallyPaused = false;
       const attempt = video.play();
       if (attempt && typeof attempt.catch === 'function') attempt.catch(syncPlayButton);
     }
-    else video.pause();
+    else {
+      manuallyPaused = true;
+      video.pause();
+    }
   });
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) startVideo();
+  });
+  window.addEventListener('pageshow', startVideo);
   // Na iOS-u autoplay ponekad ne pokrene učitavanje; korisnik uvijek ima gumb za reprodukciju.
   startVideo();
 

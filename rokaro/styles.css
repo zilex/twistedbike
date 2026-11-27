@@ -618,8 +618,7 @@ body{font-size:17px;line-height:1.58;overflow-x:hidden}
 .hero-cinema-media{z-index:0;background:#16120e}
 .hero-cinema-poster,.hero-cinema-video{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 51%}
 .hero-cinema-poster{filter:saturate(.83) contrast(1.06)}
-.hero-cinema-video{opacity:0;transition:opacity .65s ease;z-index:1}
-.hero-cinema.video-ready .hero-cinema-video{opacity:1}
+.hero-cinema-video{opacity:1;z-index:1}
 .hero-cinema-shade{z-index:2;background:linear-gradient(90deg,rgba(17,13,10,.93) 0%,rgba(18,13,10,.73) 39%,rgba(18,13,10,.12) 95%),linear-gradient(0deg,rgba(13,9,7,.74),transparent 42%)}
 .hero-cinema-content{position:relative;z-index:3;display:flex;flex-direction:column;justify-content:flex-end;min-height:inherit;padding-top:105px;padding-bottom:28px}
 .hero-cinema-copy{max-width:795px;margin:0 0 62px}

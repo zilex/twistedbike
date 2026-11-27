@@ -10,6 +10,8 @@ Nemojte stvoriti dodatnu ugniježđenu mapu `ROKARO_Landing_...` jer bi se stran
 
 U paketu su dvije optimizirane H.264 MP4 datoteke, obje **bez audiozapisa**: `assets/rokaro-video-mobile.mp4` za mobitele i `assets/rokaro-video-desktop.mp4` za veće zaslone. Video nema izvorne kontrole ni kontrole zvuka. Pokreće se automatski i vrti u petlji kada to preglednik dopušta. Ako autoplay bude blokiran (npr. štednja podataka ili energije), odmah je dostupan gumb **Pokreni**. Ako se video ne može učitati, ostaje fotografija `assets/rokaro-video-poster.webp`.
 
+Za mobilni autoplay nemojte ponovno skrivati video pomoću `opacity: 0`, `display: none` ili `visibility: hidden`: Safari zahtijeva da video bude vidljiv na zaslonu. Nakon zamjene datoteka obvezno provjerite stvarni mobitel, osobito Safari uz uključen/isključen način štednje energije.
+
 Za zamjenu videa izvezite dvije nijeme H.264 MP4 verzije (16:9, `yuv420p`, `faststart`) i zamijenite upravo te dvije datoteke u `assets/`. Sliku prvog kadra možete zamijeniti zasebno u `rokaro-video-poster.webp`.
 
 ## Galerija — najjednostavnije dodavanje fotografija
