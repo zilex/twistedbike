@@ -1,58 +1,38 @@
-# ROKARO V9.3 — video na naslovnici i galerija bez natpisa
+# ROKARO — produkcijska verzija landing stranice
 
-Web stranica je na hrvatskom jeziku. Kontakt je izravan: e-mail `rokaro.info@gmail.com` i telefon `092 343 1924`. Nema obrasca ni FormSubmita.
+## Gdje ide stranica
 
-## 1. Kako dodati nove fotografije (2 kratka koraka)
+Sadržaj ove mape postavite u `rokaro/` unutar GitHub repozitorija `zilex/twistedbike`, tako da je početna datoteka `rokaro/index.html`. Glavna adresa je `https://twistedbike.hr/rokaro/`.
 
-1. Kopirajte novu fotografiju (`.jpg`, `.png` ili `.webp`) u mapu **`assets`** pokraj postojećih fotografija. Preporuka: jednostavan naziv bez razmaka, npr. `moj-novi-teren.jpg`.
-2. Otvorite **`galerija.js`** u Notepadu ili VS Codeu. U popisu dodajte jedan novi red s točnim nazivom datoteke:
+Nemojte stvoriti dodatnu ugniježđenu mapu `ROKARO_Landing_...` jer bi se stranica tada otvarala na pogrešnoj adresi.
 
-   ```js
-   "assets/moj-novi-teren.jpg",
-   ```
+## Video
 
-Spremite `galerija.js` i osvježite stranicu. **Ne morate uređivati `index.html` ni `script.js`.**
+U paketu su dvije optimizirane H.264 MP4 datoteke, obje **bez audiozapisa**: `assets/rokaro-video-mobile.mp4` za mobitele i `assets/rokaro-video-desktop.mp4` za veće zaslone. Video nema izvorne kontrole ni kontrole zvuka. Pokreće se automatski i vrti u petlji kada to preglednik dopušta. Ako autoplay bude blokiran (npr. štednja podataka ili energije), odmah je dostupan gumb **Pokreni**. Ako se video ne može učitati, ostaje fotografija `assets/rokaro-video-poster.webp`.
 
-- Za promjenu redoslijeda premjestite redak više ili niže u popisu.
-- Za uklanjanje fotografije izbrišite njezin redak.
-- Prva fotografija u popisu prikazuje se najveća.
-- Prvih šest vidljivo je odmah; sedma i sve ostale prikazuju se na klik **Prikaži sve fotografije**.
-- Galerija prikazuje samo fotografije, bez naziva, kategorija i opisa. Klik otvara sliku u velikom pregledu s tipkama lijevo/desno.
+Za zamjenu videa izvezite dvije nijeme H.264 MP4 verzije (16:9, `yuv420p`, `faststart`) i zamijenite upravo te dvije datoteke u `assets/`. Sliku prvog kadra možete zamijeniti zasebno u `rokaro-video-poster.webp`.
 
-**Pazite:** zadržite navodnike i zarez na kraju retka. Ako se fotografija ne pojavi, prvo provjerite je li naziv u popisu potpuno isti kao naziv datoteke.
+## Galerija — najjednostavnije dodavanje fotografija
 
-## 2. Kako dodati video — bez uređivanja koda
+1. Dodajte novu `.jpg`, `.png` ili `.webp` datoteku u `assets/`.
+2. Otvorite `galerija.js`.
+3. Dodajte novi red u popis, primjerice `"assets/nova-fotografija.jpg",`.
+4. Spremite i objavite izmjene.
 
-1. Pripremite video u formatu **MP4 (H.264)**, horizontalno, najbolje 16:9.
-2. Nazovite ga točno **`rokaro-video.mp4`**.
-3. Kopirajte ga u mapu **`assets`** uz postojeće slike. Gotovo.
+Redoslijed fotografija mijenja se redoslijedom redaka. Na stranici se ne ispisuju imena datoteka ni opisi slika.
 
-Na vrhu stranice video će se automatski učitavati i, gdje preglednik to dopušta, pokretati **bez zvuka i u petlji**. Posjetitelj može uključiti zvuk i pauzirati video. Ako video nedostaje, prikazuje se velika naslovna fotografija i mali tekst **VIDEO U PRIPREMI**, bez pokvarenog playera.
+## Cjenik
 
-Za dobar prvi dojam preporuka je video 15–30 sekundi s vidljivim vožnjama, stvarnom arenom i kadrovima sudionika kada ih budete imali. Video treba optimizirati za brzo učitavanje na mobitelima.
+Javni cjenik je u `cjenik/index.html`, a pripadajući CSV u `cjenici/`.
 
-## 3. Kako pregledati stranicu
+- Cijene na HTML stranici i u CSV-u moraju odgovarati stvarnim važećim cijenama na mjestu pružanja usluge. **Prije objave potvrdite javne pojedinačne vožnje 5/10/15 minuta (3/5/8 €): te stavke nisu navedene u centralnom ROKARO cjeniku, u kojem su paketi rođendana i poslovnih događanja.**
+- Preuzeti CSV ima propisne elemente naziva: MBO, oznaku prodajnih mjesta, `USLUGE`, redni broj i datum/vrijeme.
+- Neposredno prije svake nove javne objave izvršite `PRIPREMI_CJENIK_ZA_OBJAVU.ps1` u Windows PowerShellu. Skripta ažurira naziv CSV-a, poveznicu, atribut za preuzimanje i prikazani datum cjenika. Ne objavljuje datoteke.
+- Oznaku `ZA_SVA_PRODAJNA_MJESTA` koristite samo ako je isti cjenik primjenjiv na svim relevantnim prodajnim mjestima. Za različite cjenike potrebna je druga organizacija datoteka.
+- Pri promjeni cjenika prethodnu verziju sačuvajte u `cjenici/arhiva/` i osigurajte pristup najmanje 15 dana.
 
-Raspakirajte ZIP i dvokliknite `index.html`. Za običan pregled nije potreban server. Nakon dodavanja fotografije ili videa samo osvježite stranicu (ponekad `Ctrl + F5`).
+GitHub Pages je statički hosting: promjena propisnog naziva CSV datoteke mijenja i njezinu izravnu URL adresu. Dugoročno rješenje zahtjeva iste URL adrese pri zamjeni potrebno je odvojeno uskladiti s načinom posluživanja CSV-a.
 
-## 4. Prije javne objave
+## Kontrola nakon objave
 
-- Zakonske podstranice otvaraju se izravno na `cjenik/index.html`, `podaci-o-obrtu/index.html`, `pisani-prigovori/index.html` i `privatnost/index.html`. Poveznice rade i kada lokalno dvokliknete glavnu stranicu bez servera. Stara `privatnost.html` preusmjerava na novu adresu.
-- Prije javne objave obavezno pročitajte `README_CJENIK.md` i potvrdite sve navedene cijene, registracijske i privatnosne podatke. Zakonski dio je trenutačno **radna verzija**, a ne objavljena pravna usklađenost.
-- Provjerite `mailto:` i `tel:` poveznice na mobitelu.
-- Ne predstavljajte vizuale s montiranim ambijentom ili sudionicima kao dokumentaciju već održanih događanja; nakon prvih eventa zamijenite ih stvarnim fotografijama i snimkama.
-- Postavite apsolutni URL za Open Graph sliku kada bude poznata domena.
-
-## Struktura za samostalno održavanje
-
-```text
-index.html                  glavna stranica
-styles.css                  dizajn
-script.js                   funkcionalnost galerije i videa
-galerija.js                 JEDINA DATOTEKA ZA DODAVANJE SLIKA
-assets/
-  rokaro-video.mp4          OVDJE KOPIRAJTE VIDEO (trenutačno ne postoji)
-  moja-fotografija.jpg      OVDJE DODAJTE NOVE FOTOGRAFIJE
-privatnost.html             radna izjava o privatnosti
-dokumenti/                  B2B prezentacija
-```
+Otvorite početnu stranicu i svaku pravnu podstranicu (`cjenik/`, `podaci-o-obrtu/`, `pisani-prigovori/`, `privatnost/`). Provjerite video i fotografije na mobitelu te preuzmite CSV i usporedite ime datoteke s nazivom na poslužitelju. Potvrdite i da su podaci obrta, postupak zaprimanja prigovora i politika privatnosti točni u stvarnoj operativi.

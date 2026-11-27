@@ -8,16 +8,18 @@
 <meta content="#F2EAE0" name="theme-color"/>
 <title>ROKARO – Mobilna RC Off-Road Arena za evente, Family Day i rođendane</title>
 <meta content="ROKARO je mobilna RC off-road arena za Family Day, korporativna događanja, trgovačke centre, festivale, auto-moto susrete i rođendane. Oprema i operater uključeni." name="description"/>
+<link href="https://twistedbike.hr/rokaro/" rel="canonical"/>
 <meta content="website" property="og:type"/>
 <meta content="hr_HR" property="og:locale"/>
+<meta content="https://twistedbike.hr/rokaro/" property="og:url"/>
 <meta content="ROKARO – Mobilna RC off-road arena za vaš event" property="og:title"/>
 <meta content="Mala arena. Velike avanture. RC off-road iskustvo za djecu od 6 godina i odrasle na vašem eventu." property="og:description"/>
-<meta content="assets/og-rokaro.webp" property="og:image"/>
+<meta content="https://twistedbike.hr/rokaro/assets/og-rokaro.webp" property="og:image"/>
 <link href="assets/rokaro-logo.png" rel="icon" type="image/png"/>
-<link as="image" fetchpriority="high" href="assets/hero-event.webp" rel="preload"/>
-<link href="styles.css" rel="stylesheet"/>
+<link as="image" fetchpriority="high" href="assets/rokaro-video-poster.webp" rel="preload"/>
+<link href="styles.css?v=20261127" rel="stylesheet"/>
 <script defer="" src="galerija.js"></script>
-<script defer="" src="script.js"></script>
+<script defer="" src="script.js?v=20261127"></script>
 </head>
 <body>
 <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
@@ -40,9 +42,10 @@
 <main id="sadrzaj">
 <section aria-labelledby="hero-title" class="hero hero-cinema" id="video">
 <div class="hero-cinema-media" aria-hidden="true">
-  <img class="hero-cinema-poster" alt="" fetchpriority="high" height="721" src="assets/hero-event.webp" width="960"/>
-  <video class="hero-cinema-video" id="rokaro-video" autoplay muted loop playsinline preload="metadata" aria-label="ROKARO RC off-road arena u akciji">
-    <source src="assets/rokaro-video.mp4" type="video/mp4"/>
+  <img class="hero-cinema-poster" alt="" fetchpriority="high" height="540" src="assets/rokaro-video-poster.webp" width="960"/>
+  <video class="hero-cinema-video" id="rokaro-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/rokaro-video-poster.webp" disablepictureinpicture disableremoteplayback controlslist="nodownload noremoteplayback" aria-label="ROKARO RC off-road arena u akciji — video bez zvuka">
+    <source media="(max-width: 760px)" src="assets/rokaro-video-mobile.mp4" type="video/mp4"/>
+    <source src="assets/rokaro-video-desktop.mp4" type="video/mp4"/>
   </video>
 </div>
 <div class="hero-cinema-shade" aria-hidden="true"></div>
@@ -59,20 +62,17 @@
     <span class="hero-cinema-scroll">POMAKNITE ZA VIŠE <span aria-hidden="true">↓</span></span>
     <div class="hero-cinema-playback" id="video-controls" hidden>
       <button class="hero-video-button" id="video-pause" type="button" aria-label="Pauziraj video">Pauziraj <span aria-hidden="true">Ⅱ</span></button>
-      <button class="hero-video-button" id="video-sound" type="button" aria-label="Uključi zvuk videa">Uključi zvuk <span aria-hidden="true">♪</span></button>
     </div>
-    <span class="hero-cinema-video-pending" id="video-pending">VIDEO U PRIPREMI</span>
   </div>
 </div>
 </section>
 <section aria-label="Ključne informacije" class="numbers">
 <div class="container numbers-inner">
-<div class="number-item"><strong>25–30 <small>/ SAT</small></strong><span>djece u testiranju*</span></div>
-<div class="number-item"><strong>≈ 15 <small>MIN</small></strong><span>približna montaža</span></div>
+<div class="number-item"><strong>5 × 4 <small>M</small></strong><span>površina arene</span></div>
+<div class="number-item"><strong>≈ 10 <small>MIN</small></strong><span>približna montaža</span></div>
 <div class="number-item"><strong>6+ <small>I ODRASLI</small></strong><span>dobna skupina</span></div>
 <div class="number-item"><strong>1 <small>OPERATER</small></strong><span>uključen u organizaciju vožnji</span></div>
 </div>
-<div class="container"><p class="numbers-note">* Kapacitet je izmjeren s djecom, jednim operaterom i izmjenama sudionika u testiranoj konfiguraciji. Stvarni protok ovisi o formatu događanja, trajanju vožnji i uvjetima rada.</p></div>
 </section>
 <section class="section section-benefits" id="iskustvo">
 <div class="container">
@@ -115,12 +115,12 @@
 <div class="section-topline"><span class="kicker">04 / Za organizatore</span><span class="section-aside">Operativni sažetak za planiranje</span></div>
 <div class="organizer-heading"><div><h2>PLANIRATE DOGAĐAJ?<br/><span>EVO ŠTO TREBATE ZNATI.</span></h2></div><p>Najvažniji podaci na jednom mjestu, bez skrivanja operativnih uvjeta. Konačan format i trajanje potvrđujemo u ponudi.</p></div>
 <div class="organizer-grid">
-<article><span>Kapacitet u testiranju</span><strong>25–30 djece / sat</strong><p>Izmjereno uz jednog operatera i izmjene; nije garancija za svaki događaj.</p></article>
+<article><span>Kapacitet događanja</span><strong>Prema programu</strong><p>Broj sudionika ovisi o trajanju vožnji i organizaciji izmjena.</p></article>
 <article><span>Prostor za arenu</span><strong>≈ 5 × 4 m</strong><p>Potrebno je dodatno mjesto za sudionike i publiku.</p></article>
 <article><span>Lokacija</span><strong>Indoor / outdoor</strong><p>Na odgovarajućoj podlozi i uz prikladne vremenske uvjete.</p></article>
-<article><span>Vrijeme postave</span><strong>≈ 15 min</strong><p>Približno, ovisno o pristupu i pripremljenosti lokacije.</p></article>
+<article><span>Vrijeme postave</span><strong>≈ 10 min</strong><p>Približno, ovisno o pristupu i pripremljenosti lokacije.</p></article>
 <article><span>Mi osiguravamo</span><strong>Oprema + operater</strong><p>Arenu, RC vozila, upravljače, javni ekran i organizaciju vožnji.</p></article>
-<article><span>Za organizatora</span><strong>Prostor + struja</strong><p>Odgovarajuću površinu, dodatni prostor i električni priključak.</p></article>
+<article><span>Za organizatora</span><strong>Prostor + 230 V</strong><p>Dodatni prostor za sudionike te ulaz širine najmanje 1,40 m u zatvorenom.</p></article>
 </div>
 </div>
 </section><section class="section section-presentation" id="prezentacija">
@@ -142,7 +142,7 @@
 <div class="intro-row practical-intro"><h2>ROKARO OSIGURAVA.<br/><span>ORGANIZATOR PRIPREMA.</span></h2><p>Jednostavan operativni dogovor: mi donosimo arenu i vodimo aktivnosti, a s organizatorom unaprijed usklađujemo prostor, pristup, struju i uvjete izvedbe.</p></div>
 <div class="practical-grid">
 <div class="practical-panel"><h3>ROKARO OSIGURAVA</h3><ul><li>Mobilnu RC off-road arenu</li><li>RC vozila i upravljače</li><li>Operatera koji vodi aktivnost</li><li>Javni ekran za pregled vožnji</li><li>Dovoz, postavljanje i demontažu</li></ul></div>
-<div class="practical-panel practical-needs"><h3>NA LOKACIJI JE POTREBNO</h3><ul><li>Prostor za arenu približno <strong>5 × 4 m</strong></li><li>Dodatni prostor za sudionike i promatrače</li><li>Električni priključak</li><li>Prikladna podloga i pristup za postavljanje</li><li>Za vanjske angažmane odgovarajući vremenski uvjeti</li></ul></div>
+<div class="practical-panel practical-needs"><h3>NA LOKACIJI JE POTREBNO</h3><ul><li>Prostor za arenu približno <strong>5 × 4 m</strong></li><li>Dodatni prostor za sudionike i promatrače</li><li>Električni priključak <strong>230 V</strong></li><li>Za zatvorene prostore pristupni ulaz širine najmanje <strong>1,40 m</strong></li><li>Prikladna podloga i pristup za postavljanje</li><li>Za vanjske angažmane odgovarajući vremenski uvjeti</li></ul></div>
 </div>
 <p class="practical-footnote">Broj vozila i konačni opseg usluge potvrđuju se za konkretno događanje. Navedena površina odnosi se na arenu i ne uključuje dodatni prostor za publiku.</p>
 </div>
@@ -153,10 +153,10 @@
 <div class="faq-items">
 <details><summary>Što je točno ROKARO?</summary><p>ROKARO je mobilna RC off-road arena za događanja. Sudionici sami upravljaju malim RC terenskim vozilima kroz prepreke, mostove i različite podloge.</p></details>
 <details><summary>Tko može sudjelovati?</summary><p>Sudjelovati mogu djeca od 6 godina nadalje i odrasli. Prethodno iskustvo nije potrebno za osnovno sudjelovanje i zabavu.</p></details>
-<details><summary>Koliko djece može proći kroz atrakciju u satu?</summary><p>U probnoj konfiguraciji s jednim operaterom izmjereno je 25–30 djece po satu. Stvarni kapacitet ovisi o trajanju vožnji i organizaciji programa.</p></details>
+<details><summary>Koliko sudionika može proći kroz atrakciju u satu?</summary><p>Kapacitet ovisi o trajanju pojedine vožnje, broju raspoloživih vozila i organizaciji događanja. Za očekivani broj sudionika predložit ćemo odgovarajući format.</p></details>
 <details><summary>Tko postavlja i vodi aktivnost?</summary><p>ROKARO dolazi s opremom i operaterom. Mi vodimo vožnje i osnovnu organizaciju atrakcije tijekom dogovorenog angažmana.</p></details>
 <details><summary>Može li se arena postaviti unutra i vani?</summary><p>Da, uz odgovarajući prostor, podlogu i uvjete rada. Kod vanjskih angažmana izvedba ovisi o vremenskim prilikama i dogovoru.</p></details>
-<details><summary>Koliko traje postavljanje?</summary><p>Približno 15 minuta u tipičnoj konfiguraciji, uz uvjet da su pristup i prostor pripremljeni. Stvarno vrijeme može varirati ovisno o lokaciji.</p></details>
+<details><summary>Koliko traje postavljanje?</summary><p>Približno 10 minuta u tipičnoj konfiguraciji, uz uvjet da su pristup i prostor pripremljeni. Stvarno vrijeme može varirati ovisno o lokaciji.</p></details>
 </div>
 </div>
 </section>

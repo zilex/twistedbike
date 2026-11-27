@@ -79,39 +79,54 @@
   });
   modal.addEventListener('close', () => modalImg.removeAttribute('src'));
 
-  // Hero video: slika ostaje dok stvarni MP4 nije dostupan.
+  // Hero video nema audio zapis ni izvorne kontrole. Na manjim ekranima učitava se manja datoteka.
   const video = document.getElementById('rokaro-video');
   const videoHero = document.querySelector('.hero-cinema');
   const videoControls = document.getElementById('video-controls');
-  const videoPending = document.getElementById('video-pending');
   const videoPause = document.getElementById('video-pause');
-  const videoSound = document.getElementById('video-sound');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  video.controls = false;
+  video.playsInline = true;
+  video.muted = true;
+  video.defaultMuted = true;
+  // Nema audio kanala u MP4-u; ne upravljamo glasnoćom jer je iOS ne dopušta mijenjati.
 
   const syncPlayButton = () => {
     const paused = video.paused;
     videoPause.innerHTML = paused ? 'Pokreni <span aria-hidden="true">▶</span>' : 'Pauziraj <span aria-hidden="true">Ⅱ</span>';
     videoPause.setAttribute('aria-label', paused ? 'Pokreni video' : 'Pauziraj video');
   };
+  // Gumb se prikazuje odmah, čak i kada iOS/štednja podataka spriječe autoplay ili loadeddata.
+  videoControls.hidden = false;
+  syncPlayButton();
+  const startVideo = () => {
+    if (reducedMotion) return;
+    const attempt = video.play();
+    if (attempt && typeof attempt.catch === 'function') attempt.catch(syncPlayButton);
+  };
   video.addEventListener('loadeddata', () => {
     videoHero.classList.add('video-ready');
-    videoControls.hidden = false;
-    videoPending.hidden = true;
     if (reducedMotion) video.pause();
-    else video.play().catch(syncPlayButton);
+    else startVideo();
     syncPlayButton();
   });
+  video.addEventListener('playing', () => videoHero.classList.add('video-ready'));
   video.addEventListener('play', syncPlayButton);
   video.addEventListener('pause', syncPlayButton);
+  video.addEventListener('error', () => {
+    videoHero.classList.remove('video-ready');
+    videoPause.disabled = true;
+    videoPause.textContent = 'Video trenutačno nije dostupan';
+  });
   videoPause.addEventListener('click', () => {
-    if (video.paused) video.play().catch(syncPlayButton);
+    if (video.paused) {
+      const attempt = video.play();
+      if (attempt && typeof attempt.catch === 'function') attempt.catch(syncPlayButton);
+    }
     else video.pause();
   });
-  videoSound.addEventListener('click', () => {
-    video.muted = !video.muted;
-    videoSound.innerHTML = video.muted ? 'Uključi zvuk <span aria-hidden="true">♪</span>' : 'Isključi zvuk <span aria-hidden="true">♪</span>';
-    videoSound.setAttribute('aria-label', video.muted ? 'Uključi zvuk videa' : 'Isključi zvuk videa');
-  });
+  // Na iOS-u autoplay ponekad ne pokrene učitavanje; korisnik uvijek ima gumb za reprodukciju.
+  startVideo();
 
   const sticky = document.getElementById('sticky-cta');
   const contact = document.getElementById('kontakt');
